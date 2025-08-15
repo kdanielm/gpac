@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -119,7 +118,7 @@ func registerBuiltinNatives(vm *goja.Runtime) {
 
 func fromReader(r io.ReadCloser) (*Parser, error) {
 	defer r.Close()
-	buf, err := ioutil.ReadAll(r)
+	buf, err := io.ReadAll(r)
 	if err != nil {
 		return nil, err
 	}

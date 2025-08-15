@@ -2,12 +2,11 @@ package gpac_test
 
 import (
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"testing"
 
-	"github.com/darren/gpac"
+	"github.com/kdanielm/gpac"
 )
 
 func init() {
@@ -69,7 +68,7 @@ func TestParseSOCKS(t *testing.T) {
 func readBodyAndClose(resp *http.Response) string {
 	defer resp.Body.Close()
 
-	buf, err := ioutil.ReadAll(resp.Body)
+	buf, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return ""
 	}

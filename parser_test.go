@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/darren/gpac"
+	"github.com/kdanielm/gpac"
 )
 
 func Example() {
